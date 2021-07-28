@@ -55,7 +55,7 @@ tasks {
     }
 }
 
-mavenPublishAndroid(
-    artifact = RELEASE_ARTIFACT,
-    sources = android.sourceSets["main"].java.srcDirs
-)
+//mavenPublishAndroid(
+//    artifact = RELEASE_ARTIFACT,
+//    sources = android.sourceSets["main"].java.srcDirs
+//)

@@ -101,9 +101,11 @@ public final class SocialViewHelper implements SocialView {
                                 indexOfPreviousNonLetterDigit(s, 0, start - 1) + 1, start
                             ));
                         } else if (mentionChangedListener != null && mentionEditing) {
-                            mentionChangedListener.onChanged(SocialViewHelper.this, s.subSequence(
-                                indexOfPreviousNonLetterDigit(s, 0, start - 1) + 1, start
-                            ));
+                            if (!(Character.isLetterOrDigit(c) && s.charAt(start) == '@')) {
+                                mentionChangedListener.onChanged(SocialViewHelper.this, s.subSequence(
+                                        indexOfPreviousNonLetterDigit(s, 0, start - 1) + 1, start
+                                ));
+                            }
                         }
                         break;
                 }
